@@ -1,5 +1,5 @@
 void seoSort(ArrayList<Integer> array) {
-  split(array, 0, array.size() - 1, 1, 0);
+  split(array, 0, array.size() - 1, 1, getOffset(array, 2));
 }
 
 void split(ArrayList<Integer> array, int start, int end, int s, int o) {
@@ -36,8 +36,14 @@ void merge(ArrayList<Integer> array, int start, int end, int undivSize) {
     else divisible.add(array.get(i));
   }
 
+  int startWith = 1;
+  if (undivisible.size() > 0 && divisible.size() > 0)
+    startWith = undivisible.get(0) < divisible.get(0) ? 0 : 1;
+  else if (divisible.size() == 0)
+    startWith = 0;
+
   for (int i = start; i <= end; i++) {
-    if ((i - start) % 2 == 0) {
+    if (((i - start) % 2 == startWith && undivisible.size() > 0) || divisible.size() == 0) {
       array.set(i, undivisible.get(0));
       undivisible.remove(0);
     } else {
@@ -47,8 +53,7 @@ void merge(ArrayList<Integer> array, int start, int end, int undivSize) {
   }
 }
 
-void buildTupel(ArrayList<Integer> array, int start, int end, ArrayList<Integer> undivisible, 
-  ArrayList<Integer> divisible) {
+void buildTupel(ArrayList<Integer> array, int start, int end, ArrayList<Integer> undivisible, ArrayList<Integer> divisible) {
 
   int j = 0;
   if (undivisible.size() > 0) {
@@ -70,7 +75,6 @@ int getOffset(ArrayList<Integer> array, int e) {
   for (int i = 0; i < array.size(); i++) {
     if (array.get(i) <= e) off = min(off, e - array.get(i));
     //min(x, y) gibt den kleineren der beiden Werte zurück
-    if (off == 0) break;
   }
   return off;
 }
