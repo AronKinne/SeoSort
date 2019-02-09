@@ -5,8 +5,8 @@ This application sorts an array of numbers with Seo-Sort. Therefor it takes ten 
 ## How to use
 
 ```
-Left-click:		sort
-Right-click:	shuffle
+Left-click:   sort
+Right-click:  shuffle
 ```
 
 ## Installing
