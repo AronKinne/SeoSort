@@ -1,6 +1,6 @@
 import java.util.Collections;
 
-int size = 10;
+int size = 20;
 ArrayList<Integer> array;
 
 void setup() {
@@ -8,14 +8,14 @@ void setup() {
   background(255);
 
   array = new ArrayList<Integer>();
-  for (int i = 1; i <= size; i++) array.add(i);
+  for (int i = 1; i <= size; i++) array.add((i - 10) * 5);
   Collections.shuffle(array);
   println(array);
 }
 
 void mousePressed() {
   if (mouseButton == LEFT) {
-    array = seoSort(array);
+    seoSort(array);
     println(array);
   } else {
     Collections.shuffle(array);
