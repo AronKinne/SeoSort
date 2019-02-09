@@ -15,7 +15,7 @@ void setup() {
 
 void mousePressed() {
   if (mouseButton == LEFT) {
-    array = seoSort(array);
+    seoSort(array);
     println(array);
   } else {
     Collections.shuffle(array);
