@@ -1,6 +1,6 @@
 # Seo-Sort
 
-This application sorts an array of numbers with Seo-Sort. Therefor it takes ten numbers in a random order and sorts. Only positive numbers from 1 to n are used. The algorithm works inplace.
+This application sorts an array of numbers with Seo-Sort. Therefor it takes ten numbers in a random order and sorts them. Negitave numbers are possible, but each of them need to be a successor or predecessor of one of each other. The algorithm works inplace.
 
 ## How to use
 
